@@ -12,7 +12,7 @@ window.onload = function() {
           {option: 'D: Yoko Ono'},
           ],
           correct: 'B: Georgia O\'Keeffe',
-          questionImage: "photos/o'keeffe.jpg",
+          questionImage: "assets/o'keeffe.jpg",
       },
       {
         q : "Name this Canadian born painter who widely considered an 'American Artist'",
@@ -23,7 +23,7 @@ window.onload = function() {
           {option: 'D: Robert Smithson'},
           ],
           correct: 'A: Agnes Martin',
-          questionImage: 'photos/martin.jpg',
+          questionImage: 'assets/martin.jpg',
 
         },
         {
@@ -35,7 +35,7 @@ window.onload = function() {
           {option: 'D: Marsden Hartley'},
           ],
           correct: 'C: Richard Diebenkorn',
-          questionImage: "photos/diebenkorn.jpg",
+          questionImage: "assets/diebenkorn.jpg",
 
         },
         {
@@ -47,7 +47,7 @@ window.onload = function() {
           {option: 'D: Francesco Clemente'},
           ],
           correct: 'A: Alex Katz',
-          questionImage: "photos/Katz.jpg",
+          questionImage: "assets/Katz.jpg",
 
         },
         {
@@ -59,7 +59,7 @@ window.onload = function() {
           {option: 'D: Cindy Sherman'},
           ],
           correct: 'D: Cindy Sherman',
-          questionImage: "photos/sherman.jpg",
+          questionImage: "assets/sherman.jpg",
 
         },
         {
@@ -71,7 +71,7 @@ window.onload = function() {
           {option: 'D: Francesco Clemente'},
           ],
           correct: 'A: Helen Frankenthaler',
-          questionImage: "photos/Frankenthaler 2.jpg",
+          questionImage: "assets/Frankenthaler 2.jpg",
 
         },
         {
@@ -83,7 +83,7 @@ window.onload = function() {
           {option: 'D: Glen Ligon'},
           ],
           correct: 'D: Glen Ligon',
-          questionImage: "photos/ligon 2.jpg",
+          questionImage: "assets/ligon 2.jpg",
 
         },
         {
@@ -95,7 +95,7 @@ window.onload = function() {
           {option: 'D: Francesco Clemente'},
           ],
           correct: 'B: Charles Burchfield',
-          questionImage: "photos/Burchfield.jpg",
+          questionImage: "assets/Burchfield.jpg",
 
         },
         {
@@ -107,7 +107,7 @@ window.onload = function() {
           {option: 'D: Richard Prince'},
           ],
           correct: 'B: Richard Avedon',
-          questionImage: "photos/Avedon.jpg",
+          questionImage: "assets/Avedon.jpg",
 
         },
          {
@@ -119,11 +119,11 @@ window.onload = function() {
           {option: 'D: Robert Rauschenberg'},
           ],
           correct: 'C: Jean Michele Basquiat',
-          questionImage: "photos/Basquiat.jpg",
+          questionImage: "assets/Basquiat.jpg",
 
         },
          {
-        q : "This artist has produced over 250 portraits of his wife Ada",
+        q : "This German born artist is famous for his work on color theory in both the United States and Europe",
         answers: [
           {option: 'A: Josef Albers'},
           {option: 'B: Mark Rothko'},
@@ -131,7 +131,7 @@ window.onload = function() {
           {option: 'D: Francesco Clemente'},
           ],
           correct: 'A: Josef Albers',
-          questionImage: "photos/albers.jpg",
+          questionImage: "assets/albers.jpg",
 
         },
          {
@@ -143,7 +143,7 @@ window.onload = function() {
           {option: 'D: Francesco Clemente'},
           ],
           correct: 'C: Alice Neel',
-          questionImage: "photos/neel.jpg",
+          questionImage: "assets/neel.jpg",
 
         },
          {
@@ -155,7 +155,7 @@ window.onload = function() {
           {option: 'D: Barnett Newman'},
           ],
           correct: 'A: Charles Henry Alston',
-          questionImage: "photos/alston.jpg",
+          questionImage: "assets/alston.jpg",
 
         },
          {
@@ -167,7 +167,7 @@ window.onload = function() {
           {option: 'D: Francesco Clemente'},
           ],
           correct: 'C: Edward Hopper',
-          questionImage: "photos/hopper2 2.jpg",
+          questionImage: "assets/hopper2 2.jpg",
 
         },
          {
@@ -179,16 +179,14 @@ window.onload = function() {
           {option: 'D: Dan Flavin'},
           ],
           correct: 'A: Alexander Calder',
-          questionImage: "photos/calder.jpg",
+          questionImage: "assets/calder.jpg",
 
         }
      ];
 
 
   let input = '';
-
   let playerScore = 0;
-
   let currentIndex = 0;
 
   const $question = $('.question');
@@ -196,62 +194,75 @@ window.onload = function() {
 
 
 
+
   function renderQuestion() {
+      //console.log(questions[currentIndex].answers[0]);
 
-    $question.html = questions[currentIndex].q;
-    $('#testImage').src = questions[currentIndex].questionImage;
+    //console.log($question.html("test"));
 
+    $question.html(questions[currentIndex].q);
+    $('#testImage').attr('src', questions[currentIndex].questionImage);
 
     for (var n = 0; n < $answers.length; n++) {
+
       //iterating through all of the node modules with the class answer using n as a counter
       //and giving each node a value , the value of an option in the data in the questions array above
-      $answers[n].hmtl = questions[currentIndex].$answers[n].option;
-      $question.css('color', 'red');
+      //console.log($answers[n])
+      $answers.eq(n).html(questions[currentIndex].answers[n].option);
+      //$question.css('color', 'red');
     }
-    currentIndex++;
 
   };
+
   renderQuestion();
 
 
 
 function gameResults () {
-  for(let i = 0; i <= $answers.length; i++) {
-    $answers[i].on('click', function(event) {
+  for(let i = 0; i < $answers.length; i++) {
+    //console.log($answers[i])
+    $answers.eq(i).on('click', function(event) {
 
-       if (event.target.innerHTML === questions[currentIndex -1].correct) {
+        if(currentIndex === 0) {
 
-    event.target.css('color', 'green');
+         if(event.target.innerHTML === questions[currentIndex].correct) {
+            $(event.target).css('color', 'green');
+            playerScore ++;
 
+          } else {
+            $(event.target).css('color', 'firebrick');
+          }
 
-    playerScore ++;
+        } else {
+
+        if(event.target.innerHTML === questions[currentIndex-1].correct) {
+                  $(event.target).css('color', 'green');
+                  playerScore ++;
+
+        } else {
+          $(event.target).css('color', 'firebrick');
         }
 
-      else {
-
-      event.target.css('color', 'firebrick');
-         }
-     });
+      }
+  });
 
 
-   let $tally = $('#tally');
-   $tally.html = (playerScore) + ' out of ' + questions.length;
   }
 }
 
 
-  var $startGame = $('#startPage');
+  var $landingPage = $('#landingPage');
   var $gamePage = $('#gamePage');
   var $resultsPage = $('#resultsPage');
 
-  if (start){
+  //if (start){
   $('#submit').on('submit', startGame);
 
       function startGame (event){
         event.preventDefault();
         let $username = $('#username');
         let $result = $('#result');
-        $result.textContent = $username.value + "'s results!";
+        $result.html($username.val() + "'s results!");
         $gamePage.css('visibility', 'visible');
         $landingPage.css('visibility', 'hidden');
         $resultsPage.css('visibility', 'hidden');
@@ -259,12 +270,15 @@ function gameResults () {
         currentIndex = 0;
         playerScore = 0;
       }
-    }
-    if (next){
+    //}
+
+    //if (next){
       $('#next').on('click', nextQuestion);
       function nextQuestion (){
+        currentIndex++;
+        console.log(currentIndex);
         for (var i = 0; i < $answers.length; i++) {
-          $answers[i].css('color', 'white');
+          $answers.eq(i).css('color', 'white');
         }
         $resultsPage.css('visibility', 'hidden');
         $gamePage.css('visibility', 'visible');
@@ -273,9 +287,9 @@ function gameResults () {
         renderQuestion();
 
         }
-      }
+      //}
 
-    if (playAgain){
+    //if (playAgain){
   $('#playAgain').on('click', reloadGame);
 
       function reloadGame (){
@@ -284,9 +298,9 @@ function gameResults () {
         $landingPage.css('visibility', 'visible');
         location.reload();
       }
-    }
+    //}
   //if player click exit, reset game
-  if (exit){
+  //if (exit){
     $('#exit').on('click', resetGame);
 
       function resetGame (){
@@ -296,7 +310,7 @@ function gameResults () {
         $currentIndex = 0;
         $playerScore = 0;
         }
-      }
+      //}
 
     function checkGameCompletion (){
       if (questions.length === currentIndex) {
@@ -305,6 +319,7 @@ function gameResults () {
         $landingPage.css('visibility', 'hidden');
         currentIndex = 0;
         gameResults();
+        $('#tally').html((playerScore) + ' out of ' + questions.length);
 
           }
         }

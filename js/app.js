@@ -12,7 +12,7 @@ window.onload = function() {
           {option: 'D: Yoko Ono'},
           ],
           correct: 'B: Georgia O\'Keeffe',
-          questionImage: "photos/o'keeffe.jpg",
+          questionImage: "assets/o'keeffe.jpg",
       },
       {
         q : "Name this Canadian born painter who widely considered an 'American Artist'",
@@ -23,7 +23,7 @@ window.onload = function() {
           {option: 'D: Robert Smithson'},
           ],
           correct: 'A: Agnes Martin',
-          questionImage: 'photos/martin.jpg',
+          questionImage: 'assets/martin.jpg',
 
         },
         {
@@ -35,7 +35,7 @@ window.onload = function() {
           {option: 'D: Marsden Hartley'},
           ],
           correct: 'C: Richard Diebenkorn',
-          questionImage: "photos/diebenkorn.jpg",
+          questionImage: "assets/diebenkorn.jpg",
 
         },
         {
@@ -47,7 +47,7 @@ window.onload = function() {
           {option: 'D: Francesco Clemente'},
           ],
           correct: 'A: Alex Katz',
-          questionImage: "photos/Katz.jpg",
+          questionImage: "assets/Katz.jpg",
 
         },
         {
@@ -59,7 +59,7 @@ window.onload = function() {
           {option: 'D: Cindy Sherman'},
           ],
           correct: 'D: Cindy Sherman',
-          questionImage: "photos/sherman.jpg",
+          questionImage: "assets/sherman.jpg",
 
         },
         {
@@ -71,7 +71,7 @@ window.onload = function() {
           {option: 'D: Francesco Clemente'},
           ],
           correct: 'A: Helen Frankenthaler',
-          questionImage: "photos/Frankenthaler 2.jpg",
+          questionImage: "assets/Frankenthaler 2.jpg",
 
         },
         {
@@ -83,7 +83,7 @@ window.onload = function() {
           {option: 'D: Glen Ligon'},
           ],
           correct: 'D: Glen Ligon',
-          questionImage: "photos/ligon 2.jpg",
+          questionImage: "assets/ligon 2.jpg",
 
         },
         {
@@ -95,7 +95,7 @@ window.onload = function() {
           {option: 'D: Francesco Clemente'},
           ],
           correct: 'B: Charles Burchfield',
-          questionImage: "photos/Burchfield.jpg",
+          questionImage: "assets/Burchfield.jpg",
 
         },
         {
@@ -107,7 +107,7 @@ window.onload = function() {
           {option: 'D: Richard Prince'},
           ],
           correct: 'B: Richard Avedon',
-          questionImage: "photos/Avedon.jpg",
+          questionImage: "assets/Avedon.jpg",
 
         },
          {
@@ -119,7 +119,7 @@ window.onload = function() {
           {option: 'D: Robert Rauschenberg'},
           ],
           correct: 'C: Jean Michele Basquiat',
-          questionImage: "photos/Basquiat.jpg",
+          questionImage: "assets/Basquiat.jpg",
 
         },
          {
@@ -131,7 +131,7 @@ window.onload = function() {
           {option: 'D: Francesco Clemente'},
           ],
           correct: 'A: Josef Albers',
-          questionImage: "photos/albers.jpg",
+          questionImage: "assets/albers.jpg",
 
         },
          {
@@ -143,7 +143,7 @@ window.onload = function() {
           {option: 'D: Francesco Clemente'},
           ],
           correct: 'C: Alice Neel',
-          questionImage: "photos/neel.jpg",
+          questionImage: "assets/neel.jpg",
 
         },
          {
@@ -155,7 +155,7 @@ window.onload = function() {
           {option: 'D: Barnett Newman'},
           ],
           correct: 'A: Charles Henry Alston',
-          questionImage: "photos/alston.jpg",
+          questionImage: "assets/alston.jpg",
 
         },
          {
@@ -167,7 +167,7 @@ window.onload = function() {
           {option: 'D: Francesco Clemente'},
           ],
           correct: 'C: Edward Hopper',
-          questionImage: "photos/hopper2 2.jpg",
+          questionImage: "assets/hopper2 2.jpg",
 
         },
          {
@@ -179,7 +179,7 @@ window.onload = function() {
           {option: 'D: Dan Flavin'},
           ],
           correct: 'A: Alexander Calder',
-          questionImage: "photos/calder.jpg",
+          questionImage: "assets/calder.jpg",
 
         }
      ];
