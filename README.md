@@ -10,10 +10,10 @@ I am making this game because I love American art history and wanted to create a
 
 FullSizeRender.jpg
 
-<img src="wireframes/FullSizeRender.jpg"></img>
-<img src="wireframes/FullSizeRender_1.jpg"></img>
-<img src="wireframes/FullSizeRender_2.jpg"></img>
-<img src="wireframes/FullSizeRender_3.jpg"></img>
+<img src="assets/wireframes/FullSizeRender.jpg"></img>
+<img src="assets/wireframes/FullSizeRender_1.jpg"></img>
+<img src="assets/wireframes/FullSizeRender_2.jpg"></img>
+<img src="assets/wireframes/FullSizeRender_3.jpg"></img>
 
 
 
